@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "author": " ",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-stm32-bluepill",
+      "id": "stm32",
+      "top": 0,
+      "left": -24.28,
+      "attrs": { "builder": "platformio-stm32" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 102,
+      "left": 81,
+      "attrs": { "color": "limegreen", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 215.15,
+      "left": -9.6,
+      "attrs": { "value": "330" }
+    },
+    { "type": "wokwi-logic-analyzer", "id": "logic1", "top": -47.65, "left": 115.2, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -99.4,
+      "left": -38.4,
+      "attrs": { "color": "green", "xray": "1" }
+    }
+  ],
+  "connections": [
+    [ "stm32:A10", "$serialMonitor:TX", "green", [] ],
+    [ "stm32:A9", "$serialMonitor:RX", "green", [] ],
+    [ "stm32:GND.1", "r1:1", "black", [ "h-27.35", "v37.04" ] ],
+    [ "r1:2", "led1:C", "green", [ "v0", "h37.2" ] ],
+    [ "stm32:A9", "logic1:D0", "green", [ "h11.05", "v-97.36" ] ],
+    [ "stm32:A10", "logic1:D1", "green", [ "h49.45", "v-97.36" ] ],
+    [ "led1:A", "stm32:A1", "green", [ "v0" ] ],
+    [ "btn1:2.l", "stm32:GND.1", "green", [ "h-28.8", "v249.8" ] ],
+    [ "btn1:2.r", "stm32:B1", "green", [ "h48.2", "v125" ] ]
+  ],
+  "serialMonitor": { "display": "auto", "newline": "none" },
+  "dependencies": {}
+}
