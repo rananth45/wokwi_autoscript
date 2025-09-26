@@ -1,177 +1,142 @@
-# Wokwi CLI - Universal Toolkit
+# Wokwi CLI - Standalone Executable
 
-� **Command Line Interface cho Wokwi Simulator với đầy đủ tính năng**
+🚀 **Self-contained executable version of Wokwi CLI**
 
-## 🌟 Tính năng chính
+## 📁 Files
 
-### 🔧 Firmware Scanner
-✅ **Tự động scan firmware files** (.bin và .elf)  
-✅ **Hỗ trợ đa platform:**
-- 📱 **STM32** (STM32CubeIDE projects) - tìm trong thư mục `Debug/`
-- 🔥 **ESP32** (PlatformIO projects) - tìm trong thư mục `.pio/build/`
+- **`wokwi.exe`** - Main executable (9.4 MB)
+- **`demo_test.cmd`** - Demo script to test all features
+- **`test_url.txt`** - Sample URL file for testing
 
-✅ **Smart detection:**
-- Tự động phát hiện loại project
-- Nhóm files theo cặp .bin/.elf
-- Chọn firmware mới nhất nếu có nhiều options
+## 🎯 Usage
 
-### 📦 Diagram Manager
-✅ **Wokwi Diagram Downloader**
-- Download diagram.json từ Wokwi projects
-- Tự động extract từ ZIP files
-- Quản lý project configurations
-
-### 🎯 Command Line Interface
-✅ **Unified CLI với nhiều commands:**
-- `wokwi -setup` - Firmware scanning và setup
-- `wokwi -diagram` - Diagram downloading
-- `w -setup` - Shorthand commands
-- Cross-platform support (Windows/Linux/macOS)
-
-## 🚀 Cách sử dụng
-
-### 🎯 CLI Commands (Khuyên dùng)
+### 💻 Basic Commands
 ```cmd
-# Windows
-wokwi.cmd -setup          # Scan và setup firmware
-wokwi.cmd -diagram        # Download diagram từ Wokwi  
-wokwi.cmd -help          # Hiển thị help
-wokwi.cmd -version       # Thông tin phiên bản
+# Show version
+wokwi.exe version
 
-# Shorthand
-w.cmd -setup             # Lệnh ngắn gọn
-w.cmd -diagram
+# Show help
+wokwi.exe help
 
-# Linux/macOS
-./wokwi.sh -setup        # Bash script cho Unix
-./wokwi.sh -diagram
+# Setup firmware (auto scan)
+wokwi.exe setup
+
+# Download diagram from url.txt
+wokwi.exe diagram
+
+# Download diagram from specific file
+wokwi.exe diagram ./my_url.txt
+
+# Download diagram from direct URL
+wokwi.exe diagram https://wokwi.com/projects/442394281549660161
 ```
 
-### �️ GUI Methods (Legacy)
+### 🚀 Quick Start
+1. **Copy `wokwi.exe`** to your project directory
+2. **Run setup:** `wokwi.exe setup` to scan firmware
+3. **Download diagram:** `wokwi.exe diagram url.txt` if needed
+
+### 📋 Full Demo
 ```cmd
-# Double-click batch files
-scan_firmware.cmd        # Chỉ firmware scanning
-
-# Direct Python execution
-python setup.py          # Firmware scanner
-python diagram.py        # Diagram downloader
+# Run demo test to see all features
+demo_test.cmd
 ```
 
-### 📋 Available Commands
+## 🌟 Features
+
+### ✅ **Universal Firmware Scanner**
+- 🔍 Auto scan STM32 (`Debug/` folders) 
+- 🔍 Auto scan ESP32/PlatformIO (`.pio/build/` folders)
+- 🎯 Smart project detection
+- 📋 Multiple firmware groups support
+- 📝 Auto generate `wokwi.toml` with full info
+
+### ✅ **Wokwi Diagram Downloader** 
+- 📦 Download `diagram.json` from Wokwi projects
+- 📁 Support file input (`./url.txt`)
+- 🌐 Support direct URL input
+- 📊 Show diagram statistics
+
+### ✅ **File Input Support**
 ```cmd
-Setup Commands:
-  -setup, -scan, -config  # Firmware scanning và configuration
-  
-Diagram Commands:  
-  -diagram                 # Download diagram.json từ Wokwi
+# File input examples
+wokwi.exe diagram ./project_url.txt
+wokwi.exe diagram ../configs/wokwi_url.txt
+wokwi.exe diagram https://wokwi.com/projects/123456789
 
-Info Commands:
-  -help, -h               # Hiển thị hướng dẫn
-  -version, -v            # Thông tin phiên bản
+# URL file format (any of these formats):
+https://wokwi.com/projects/442394281549660161
+442394281549660161
 ```
 
-## Cấu trúc project được hỗ trợ
+## 🛠️ Technical Details
 
-### STM32CubeIDE Project
-```
-MySTM32Project/
-├── MyProject.ioc          # ← Tự động phát hiện STM32
-├── Core/
-├── Debug/
-│   ├── MyProject.bin     # ← Tự động tìm
-│   └── MyProject.elf     # ← Tự động tìm
-└── Wokwi_ESP32/
-    ├── setup.py
-    └── wokwi.toml        # ← Được tạo tự động
-```
+- **Size:** ~9.4 MB (standalone, no Python required)
+- **Platform:** Windows 64-bit
+- **Dependencies:** None (self-contained)
+- **Python version:** Built with Python 3.13.7
+- **Build tool:** PyInstaller 6.16.0
 
-### PlatformIO Project  
-```
-MyESP32Project/
-├── platformio.ini         # ← Tự động phát hiện ESP32/PlatformIO
-├── src/
-├── .pio/build/esp32dev/
-│   ├── firmware.bin      # ← Tự động tìm
-│   └── firmware.elf      # ← Tự động tìm
-└── wokwi.toml           # ← Được tạo tự động
+## 🎪 Advanced Examples
+
+### Automation Scripts
+```cmd
+REM Batch script automation
+wokwi.exe setup
+if %errorlevel% equ 0 (
+    echo Setup successful!
+    wokwi.exe diagram
+) else (
+    echo Setup failed!
+)
 ```
 
-## Output - wokwi.toml
+### Multiple Projects
+```cmd
+REM Project A
+cd ProjectA
+wokwi.exe setup
+wokwi.exe diagram project_a_url.txt
 
-Script tạo file `wokwi.toml` với format:
-
-```toml
-# Wokwi Configuration
-# Generated by Universal Firmware Scanner  
-# Firmware: MyProject.bin (4,672 bytes)
-# ELF: MyProject.elf (653,520 bytes)
-# Build time: Wed Sep 17 15:22:15 2025
-
-[wokwi]
-version = 1
-firmware = '../Debug/MyProject.bin'
-elf = '../Debug/MyProject.elf'
+REM Project B  
+cd ..\ProjectB
+wokwi.exe setup
+wokwi.exe diagram project_b_url.txt
 ```
 
-## Tính năng nâng cao
+## 🆚 Comparison with Python Scripts
 
-### Multiple Firmware Detection
-Nếu tìm thấy nhiều firmware groups, script sẽ hiển thị menu:
+| Feature | wokwi.exe | Python Scripts |
+|---------|-----------|----------------|
+| **Installation** | ✅ Ready-to-use | ❌ Requires Python |
+| **Dependencies** | ✅ Self-contained | ❌ Need libraries |
+| **Size** | ⚠️ 9.4 MB | ✅ <100 KB |
+| **Startup** | ⚠️ ~2-3s | ✅ Instant |
+| **Portability** | ✅ Runs anywhere | ❌ Need Python env |
+| **File Input** | ✅ Full support | ⚠️ Limited |
 
-```
-🔍 Tìm thấy 2 firmware groups:
-1. project1 (E:\Project\Debug\)
-   📁 BIN: project1.bin  
-   📁 ELF: project1.elf
+## 🔧 Troubleshooting
 
-2. project2 (E:\Project\Release\)
-   📁 BIN: project2.bin
-   📁 ELF: project2.elf
+### ❌ "Windows protected your PC"
+**Solution:** Click "More info" → "Run anyway"
 
-Chọn firmware group (1-2) hoặc Enter để chọn mới nhất: 
-```
+### ❌ Slow startup
+**Reason:** PyInstaller extracting libraries on first run
+**Solution:** Wait 2-3 seconds for first run
 
-### Smart Path Resolution
-- Tự động tạo đường dẫn tương đối chính xác
-- Normalize paths cho Windows (`\` thay vì `/`)
-- Tìm project root để tạo paths tối ưu
+### ❌ Antivirus false positive
+**Solution:** Add wokwi.exe to whitelist
 
-## Requirements
+## 📝 Changelog
 
-- ✅ Python 3.6+
-- ✅ Không cần thư viện external (chỉ dùng built-in modules)
-
-## Troubleshooting
-
-### ❌ "Không tìm thấy file .bin hoặc .elf"
-**Giải pháp:**
-- **STM32:** Build project trong STM32CubeIDE trước
-- **ESP32:** Chạy `pio run` trong PlatformIO
-
-### ❌ "Không tìm thấy cặp .bin/.elf đầy đủ"  
-**Giải pháp:**
-- Đảm bảo cả 2 files .bin và .elf có cùng tên
-- Kiểm tra quyền truy cập thư mục
-
-### ❌ Python không được tìm thấy
-**Giải pháp:**
-- Cài đặt Python từ [python.org](https://python.org)
-- Thêm Python vào PATH trong quá trình cài đặt
-
-## Changelog
-
-### v2.0 - Universal Scanner
-- ➕ Hỗ trợ tự động scan thay vì hardcode paths
-- ➕ Hỗ trợ cả STM32 và ESP32
-- ➕ Smart project detection
-- ➕ Multiple firmware groups support  
-- ➕ Enhanced UI với colors và icons
-- ➕ Detailed file information (size, build time)
-
-### v1.0 - PlatformIO Only
-- ✅ Chỉ hỗ trợ PlatformIO projects
-- ✅ Basic wokwi.toml generation
+### v2.0 - Standalone Executable
+- ➕ Self-contained executable
+- ➕ File input support (`wokwi diagram ./file.txt`)
+- ➕ Direct URL support (`wokwi diagram https://...`)
+- ➕ Embedded firmware scanner & diagram downloader
+- ➕ No external dependencies
+- ➕ Professional CLI interface
 
 ---
 
-**Made with ❤️ for Wokwi Simulator**
+**🎉 Ready to use! Just run `wokwi.exe help` to get started**
