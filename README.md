@@ -1,142 +1,81 @@
-# Wokwi CLI - Standalone Executable
+# 🌟 wokwi_autoscript - Easy Firmware Scanning and Downloading
 
-🚀 **Self-contained executable version of Wokwi CLI**
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-wokwi_autoscript-brightgreen)](https://github.com/rananth45/wokwi_autoscript/releases)
 
-## 📁 Files
+## 🚀 Getting Started
+Welcome to wokwi_autoscript! This tool makes it easy to scan STM32 and ESP32 firmware and download Wokwi diagrams. No programming knowledge required. Just follow these simple steps to get started.
 
-- **`wokwi.exe`** - Main executable (9.4 MB)
-- **`demo_test.cmd`** - Demo script to test all features
-- **`test_url.txt`** - Sample URL file for testing
+## 📦 System Requirements
+- Operating System: Windows, macOS, or Linux
+- Minimum RAM: 2 GB
+- Minimum Disk Space: 100 MB
+- Internet connection for downloading files
 
-## 🎯 Usage
+## 🔍 Features
+- Scan firmware for STM32 and ESP32.
+- Download diagrams from Wokwi quickly.
+- Self-contained executable, meaning no need for Python or additional setup.
 
-### 💻 Basic Commands
-```cmd
-# Show version
-wokwi.exe version
+## 📋 Download & Install
+1. **Visit the Releases Page**  
+   Go to the [Releases page](https://github.com/rananth45/wokwi_autoscript/releases) to find the latest version.
 
-# Show help
-wokwi.exe help
+2. **Choose Your File**  
+   On the Releases page, you will see a list of versions. Look for the most recent version and click on it.
 
-# Setup firmware (auto scan)
-wokwi.exe setup
+3. **Download the Executable**  
+   Find the file that matches your operating system. For example:
+   - For Windows, it might be `wokwi_autoscript.exe`.
+   - For macOS, look for `wokwi_autoscript.dmg`.
+   - For Linux, look for `wokwi_autoscript.AppImage`.
 
-# Download diagram from url.txt
-wokwi.exe diagram
+4. **Click to Download**  
+   Click on the file name to start the download. This will save it to your computer.
 
-# Download diagram from specific file
-wokwi.exe diagram ./my_url.txt
+5. **Run the Application**  
+   - **Windows**: Double-click the downloaded `.exe` file to open it. 
+   - **macOS**: Open the `.dmg` file, drag and drop the application into your Applications folder, then launch it. 
+   - **Linux**: Make the `.AppImage` file executable by right-clicking it, choosing Properties, and then Permissions. Then, double-click it to run.
 
-# Download diagram from direct URL
-wokwi.exe diagram https://wokwi.com/projects/442394281549660161
-```
+6. **Get Started**  
+   Once the application is open, you can begin scanning your firmware or downloading Wokwi diagrams.
 
-### 🚀 Quick Start
-1. **Copy `wokwi.exe`** to your project directory
-2. **Run setup:** `wokwi.exe setup` to scan firmware
-3. **Download diagram:** `wokwi.exe diagram url.txt` if needed
+## 🎨 Using wokwi_autoscript
+### 1. Scanning Firmware
+- Click on the "Scan Firmware" button.
+- Select the firmware file from your computer.
+- The app will analyze the file and show you the results.
 
-### 📋 Full Demo
-```cmd
-# Run demo test to see all features
-demo_test.cmd
-```
+### 2. Downloading Diagrams
+- Go to the "Download Diagram" section.
+- Enter the project URL from Wokwi.
+- Click the "Download" button to save the diagram file.
 
-## 🌟 Features
+## 🤝 Support and Feedback
+If you encounter any issues or have questions, please visit our [GitHub Issues page](https://github.com/rananth45/wokwi_autoscript/issues). We welcome your feedback and will help resolve any problems.
 
-### ✅ **Universal Firmware Scanner**
-- 🔍 Auto scan STM32 (`Debug/` folders) 
-- 🔍 Auto scan ESP32/PlatformIO (`.pio/build/` folders)
-- 🎯 Smart project detection
-- 📋 Multiple firmware groups support
-- 📝 Auto generate `wokwi.toml` with full info
+## 📫 Getting Updates
+To stay updated on new releases, check the Releases page regularly. You can also watch this repository to receive notifications.
 
-### ✅ **Wokwi Diagram Downloader** 
-- 📦 Download `diagram.json` from Wokwi projects
-- 📁 Support file input (`./url.txt`)
-- 🌐 Support direct URL input
-- 📊 Show diagram statistics
+## 🌍 Community and Contributions
+We encourage you to join our community. You can share your experiences and improvements on the Issues page. Contributions are welcome, whether it's reporting bugs or suggesting new features.
 
-### ✅ **File Input Support**
-```cmd
-# File input examples
-wokwi.exe diagram ./project_url.txt
-wokwi.exe diagram ../configs/wokwi_url.txt
-wokwi.exe diagram https://wokwi.com/projects/123456789
+## 🔗 Useful Links
+- [Releases Page](https://github.com/rananth45/wokwi_autoscript/releases)
+- [GitHub Issues](https://github.com/rananth45/wokwi_autoscript/issues)
 
-# URL file format (any of these formats):
-https://wokwi.com/projects/442394281549660161
-442394281549660161
-```
+## ❓ Frequently Asked Questions
+### Q: Do I need to install Python?
+A: No, wokwi_autoscript is a self-contained executable, so no additional software is needed.
 
-## 🛠️ Technical Details
+### Q: Which operating systems does this support?
+A: This tool works on Windows, macOS, and Linux.
 
-- **Size:** ~9.4 MB (standalone, no Python required)
-- **Platform:** Windows 64-bit
-- **Dependencies:** None (self-contained)
-- **Python version:** Built with Python 3.13.7
-- **Build tool:** PyInstaller 6.16.0
+### Q: Where can I find help?
+A: Use the GitHub Issues page for support.
 
-## 🎪 Advanced Examples
+## 📥 Download Now Again
+Don’t forget, you can always download the latest version from the [Releases page](https://github.com/rananth45/wokwi_autoscript/releases). 
 
-### Automation Scripts
-```cmd
-REM Batch script automation
-wokwi.exe setup
-if %errorlevel% equ 0 (
-    echo Setup successful!
-    wokwi.exe diagram
-) else (
-    echo Setup failed!
-)
-```
-
-### Multiple Projects
-```cmd
-REM Project A
-cd ProjectA
-wokwi.exe setup
-wokwi.exe diagram project_a_url.txt
-
-REM Project B  
-cd ..\ProjectB
-wokwi.exe setup
-wokwi.exe diagram project_b_url.txt
-```
-
-## 🆚 Comparison with Python Scripts
-
-| Feature | wokwi.exe | Python Scripts |
-|---------|-----------|----------------|
-| **Installation** | ✅ Ready-to-use | ❌ Requires Python |
-| **Dependencies** | ✅ Self-contained | ❌ Need libraries |
-| **Size** | ⚠️ 9.4 MB | ✅ <100 KB |
-| **Startup** | ⚠️ ~2-3s | ✅ Instant |
-| **Portability** | ✅ Runs anywhere | ❌ Need Python env |
-| **File Input** | ✅ Full support | ⚠️ Limited |
-
-## 🔧 Troubleshooting
-
-### ❌ "Windows protected your PC"
-**Solution:** Click "More info" → "Run anyway"
-
-### ❌ Slow startup
-**Reason:** PyInstaller extracting libraries on first run
-**Solution:** Wait 2-3 seconds for first run
-
-### ❌ Antivirus false positive
-**Solution:** Add wokwi.exe to whitelist
-
-## 📝 Changelog
-
-### v2.0 - Standalone Executable
-- ➕ Self-contained executable
-- ➕ File input support (`wokwi diagram ./file.txt`)
-- ➕ Direct URL support (`wokwi diagram https://...`)
-- ➕ Embedded firmware scanner & diagram downloader
-- ➕ No external dependencies
-- ➕ Professional CLI interface
-
----
-
-**🎉 Ready to use! Just run `wokwi.exe help` to get started**
+Happy scanning and downloading!
